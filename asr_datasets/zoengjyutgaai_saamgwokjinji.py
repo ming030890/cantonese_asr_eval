@@ -10,7 +10,7 @@ class ZoengjyutgaaiSaamgwokjinjiDataset(Dataset):
     def __iter__(self):
         for i in range(0, len(self.audio_paths), self.batch_size):
             batch = self.audio_paths[i:i + self.batch_size]
-            batch_audios = [sample['audio'] for sample in batch]
+            batch_audios = [sample['file_name'] for sample in batch]
             batch_sentences = [sample['transcription'] for sample in batch]
             yield batch_audios, batch_sentences
     
